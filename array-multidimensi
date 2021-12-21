@@ -40,11 +40,11 @@ public class BP8_2021 {
                     while(!makanan) {
 
                         System.out.println("Aneka Menu Makanan : ");
-                        System.out.println("1. Mie Goreng Rp10.000 per Porsi.");
-                        System.out.println("2. Mie Kuah Rp12.000 per Porsi.");
-                        System.out.println("3. Nasi Goreng Rp15.000 per Porsi.");
-                        System.out.println("4. Kentang Goreng Rp10.000 per Porsi.");
-                        System.out.println("5. Gorengan Rp10.000 per Porsi.");
+                        System.out.println("1. Nasi Goreng Rp10.000 per Porsi.");
+                        System.out.println("2. Bakmi Nyemek Rp15.000 per Porsi.");
+                        System.out.println("3. Bakmi Goreng Rp15.000 per Porsi.");
+                        System.out.println("4. Sego Kucing Rp3.000 per Porsi.");
+                        System.out.println("5. Sundukan Bakar Rp2.000 per Porsi.");
                         System.out.print("Pilih Menu Makanan : ");
                         subMenu = input.nextInt();
 
@@ -138,11 +138,11 @@ public class BP8_2021 {
                     while(!minuman) {
 
                         System.out.println("Aneka Menu Minuman : ");
-                        System.out.println("1. Es Teh Rp5.000 per Porsi.");
-                        System.out.println("2. Es Jeruk Rp6.000 per Porsi.");
-                        System.out.println("3. Es Susu Rp8.000 per Porsi.");
-                        System.out.println("4. Kopi Rp6.000 per Porsi.");
-                        System.out.println("5. Air Mineral Rp4.000 per Porsi.");
+                        System.out.println("1. Es Teh Rp3.000 per Porsi.");
+                        System.out.println("2. Es Jeruk Rp4.000 per Porsi.");
+                        System.out.println("3. Susu Jahe Rp5.000 per Porsi.");
+                        System.out.println("4. Bajigur Rp7.000 per Porsi.");
+                        System.out.println("5. Ronde Rp5.000 per Porsi.");
                         System.out.print("Pilih Menu Minuman : ");
                         subMenu = input.nextInt();
 
