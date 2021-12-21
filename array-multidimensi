@@ -1,0 +1,377 @@
+package bp1_2021;
+import java.util.Scanner;
+public class BP8_2021 {
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        
+        // Inisialisasi
+        Boolean start = false;
+        String pesanan[][] = new String[10][2];
+        int harga[][] = new int[10][2];
+        int porsi[][] = new int[10][2];
+        int bayar[][] = new int[10][2];
+        int idxmkn = 0, idxmnm = 0;
+        int menu, subMenu = 0;
+        int totalPembelian = 0, hargaAkhir = 0, diskon = 0,
+        uangPembayaran = 0, kembalian = 0;
+        
+        // luaran bagian judul
+        System.out.println("=================================================================");
+        System.out.println("KASIR ANGKRINGAN JAWA");
+        System.out.println("=================================================================");
+        System.out.println("Sedia : ");
+        System.out.println("1. Aneka Makanan.");
+        System.out.println("2. Aneka Minuman.");
+        System.out.println("=================================================================");
+        
+        while(!start) {
+        
+            System.out.print("Pilih = ");
+            menu = input.nextInt();
+            System.out.println("=================================================================");
+
+            switch(menu) {
+
+                case 1: // Makanan
+
+                    Boolean makanan = false;
+                    
+                    while(!makanan) {
+
+                        System.out.println("Aneka Menu Makanan : ");
+                        System.out.println("1. Mie Goreng Rp10.000 per Porsi.");
+                        System.out.println("2. Mie Kuah Rp12.000 per Porsi.");
+                        System.out.println("3. Nasi Goreng Rp15.000 per Porsi.");
+                        System.out.println("4. Kentang Goreng Rp10.000 per Porsi.");
+                        System.out.println("5. Gorengan Rp10.000 per Porsi.");
+                        System.out.print("Pilih Menu Makanan : ");
+                        subMenu = input.nextInt();
+
+                        switch(subMenu) {
+
+                            case 1: // Nasi Goreng
+                                pesanan[idxmkn][0] = "Nasi Goreng    ";
+                                harga[idxmkn][0] = 10000;
+                                System.out.print("Nominal Porsi : ");
+                                porsi[idxmkn][0] = input.nextInt();
+                                bayar[idxmkn][0] = harga[idxmkn][0] * porsi[idxmkn][0];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmkn][0]);
+                                totalPembelian = totalPembelian + bayar[idxmkn][0];
+                                break;
+                            case 2: // Bakmi Nyemek
+                                pesanan[idxmkn][0] = "Bakmi Nyemek      ";
+                                harga[idxmkn][0] = 15000;
+                                System.out.print("Nominal Porsi : ");
+                                porsi[idxmkn][0] = input.nextInt();
+                                bayar[idxmkn][0] = harga[idxmkn][0] * porsi[idxmkn][0];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmkn][0]);
+                                totalPembelian = totalPembelian + bayar[idxmkn][0];
+                                break;
+                            case 3: //  Bakmi Goreng
+                                pesanan[idxmkn][0] = "Bakmi Goreng   ";
+                                harga[idxmkn][0] = 15000;
+                                System.out.print("Nominal porsi : ");
+                                porsi[idxmkn][0] = input.nextInt();
+                                bayar[idxmkn][0] = harga[idxmkn][0] * porsi[idxmkn][0];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmkn][0]);
+                                totalPembelian = totalPembelian + bayar[idxmkn][0];
+                                break;
+                            case 4: // Sego Kucing
+                                pesanan[idxmkn][0] = "Sego Kucing";
+                                harga[idxmkn][0] = 3000;
+                                System.out.print("Nominal Porsi : ");
+                                porsi[idxmkn][0] = input.nextInt();
+                                bayar[idxmkn][0] = harga[idxmkn][0] * porsi[idxmkn][0];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmkn][0]);
+                                totalPembelian = totalPembelian + bayar[idxmkn][0];
+                                break;
+                            case 5: // Sundukan Bakar
+                                pesanan[idxmkn][0] = "Sundukan Bakar";
+                                harga[idxmkn][0] = 2000;
+                                System.out.print("Nominal Porsi : ");
+                                porsi[idxmkn][0] = input.nextInt();
+                                bayar[idxmkn][0] = harga[idxmkn][0] * porsi[idxmkn][0];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmkn][0]);
+                                totalPembelian = totalPembelian + bayar[idxmkn][0];
+                                break;
+                            default:
+                                System.out.println("");
+
+                        }
+
+                        idxmkn++;
+
+                        System.out.println("=================================================================");
+
+                        String jawab;
+                        boolean stopAsk = false;
+
+                        // Loop (Pertanyaan)
+                        while (!stopAsk) {
+                            System.out.print("Ingin Menambah Pesanan (Y/N) : ");
+
+                            jawab = input.next();
+
+                            if (!jawab.toLowerCase().equals("y") && !jawab.toLowerCase().equals("n")) {
+                                continue;
+                            }
+
+                            stopAsk = true;
+
+                            if (jawab.toLowerCase().equals("n")) {
+                                makanan = true;
+                            }
+
+                        }
+                        
+                        System.out.println("=================================================================");
+
+                    }
+
+                    break;
+
+                case 2: // Minuman
+
+                    Boolean minuman = false;
+                    
+                    while(!minuman) {
+
+                        System.out.println("Aneka Menu Minuman : ");
+                        System.out.println("1. Es Teh Rp5.000 per Porsi.");
+                        System.out.println("2. Es Jeruk Rp6.000 per Porsi.");
+                        System.out.println("3. Es Susu Rp8.000 per Porsi.");
+                        System.out.println("4. Kopi Rp6.000 per Porsi.");
+                        System.out.println("5. Air Mineral Rp4.000 per Porsi.");
+                        System.out.print("Pilih Menu Minuman : ");
+                        subMenu = input.nextInt();
+
+                        switch(subMenu) {
+
+                            case 1: // Es Teh
+                                pesanan[idxmnm][1] = "Es Teh        ";
+                                harga[idxmnm][1] = 3000;
+                                System.out.print("Nominal porsi : ");
+                                porsi[idxmnm][1] = input.nextInt();
+                                bayar[idxmnm][1] = harga[idxmnm][1] * porsi[idxmnm][1];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmnm][1]);
+                                totalPembelian = totalPembelian + bayar[idxmnm][1];
+                                break;
+                            case 2: // Es Jeruk
+                                pesanan[idxmnm][1] = "Es Jeruk      ";
+                                harga[idxmnm][1] = 4000;
+                                System.out.print("Nominal Porsi : ");
+                                porsi[idxmnm][1] = input.nextInt();
+                                bayar[idxmnm][1] = harga[idxmnm][1] * porsi[idxmnm][1];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmnm][1]);
+                                totalPembelian = totalPembelian + bayar[idxmnm][1];
+                                break;
+                            case 3: // Susu Jahe
+                                pesanan[idxmnm][1] = "Susu Jahe      ";
+                                harga[idxmnm][1] = 5000;
+                                System.out.print("Nominal Porsi : ");
+                                porsi[idxmnm][1] = input.nextInt();
+                                bayar[idxmnm][1] = harga[idxmnm][1] * porsi[idxmnm][1];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmnm][1]);
+                                totalPembelian = totalPembelian + bayar[idxmnm][1];
+                                break;
+                            case 4: //Bajigur
+                                pesanan[idxmnm][1] = "Bajigur          ";
+                                harga[idxmnm][1] = 7000;
+                                System.out.print("Nominal Porsi : ");
+                                porsi[idxmnm][1] = input.nextInt();
+                                bayar[idxmnm][1] = harga[idxmnm][1] * porsi[idxmnm][1];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmnm][1]);
+                                totalPembelian = totalPembelian + bayar[idxmnm][1];
+                                break;
+                            case 5: //Ronde
+                                pesanan[idxmnm][1] = "Ronde   ";
+                                harga[idxmnm][1] = 5000;
+                                System.out.print("Nominal Porsi : ");
+                                porsi[idxmnm][1] = input.nextInt();
+                                bayar[idxmnm][1] = harga[idxmnm][1] * porsi[idxmnm][1];
+                                System.out.println("Total Bayar : Rp" + bayar[idxmnm][1]);
+                                totalPembelian = totalPembelian + bayar[idxmnm][1];
+                                break;
+                            default:
+                                System.out.println("");
+
+                        }
+
+                        idxmnm++;
+
+                        System.out.println("=================================================================");
+
+                        String jawab;
+                        boolean stopAsk = false;
+
+                        // Loop (Pertanyaan)
+                        while (!stopAsk) {
+                            System.out.print("Ingin Menambah Pesanan (Y/N) : ");
+
+                            jawab = input.next();
+
+                            if (!jawab.toLowerCase().equals("y") && !jawab.toLowerCase().equals("n")) {
+                                continue;
+                            }
+
+                            stopAsk = true;
+
+                            if (jawab.toLowerCase().equals("n")) {
+                                minuman = true;
+                            }
+
+                        }
+                        
+                        System.out.println("=================================================================");
+
+                    }
+
+                    break;
+
+                default: 
+                    System.out.print("");
+                    break;
+
+            }
+            
+            System.out.println("=================================================================");
+
+            String jawab;
+            boolean stopAsk = false;
+
+            // Loop (Pertanyaan)
+            while (!stopAsk) {
+                System.out.print("Ingin Menambah Makanan / Minuman (Y/N) : ");
+
+                jawab = input.next();
+
+                if (!jawab.toLowerCase().equals("y") && !jawab.toLowerCase().equals("n")) {
+                    continue;
+                }
+
+                stopAsk = true;
+
+                if (jawab.toLowerCase().equals("n")) {
+                    start = true;
+                }
+
+            }
+            
+            System.out.println("=================================================================");
+        
+        }
+        
+        System.out.println("");
+        
+        // Kartu Member
+        String kartuMember;
+        boolean loop = false;
+        
+        // Input Uang Pembayaran
+        System.out.println("=================================================================");
+        System.out.println("Total Pembelian : Rp" + totalPembelian);
+        System.out.print("Uang Pembayaran : ");
+        uangPembayaran = input.nextInt();
+        
+        // Pengkondisian dan Looping Kartu Member
+        while(!loop) {
+            
+            System.out.print("Memiliki Kartu Member Angkringan Jawa [Y/N] ? ");
+            kartuMember = input.next();
+            
+            if(!kartuMember.toLowerCase().equals("y") && !kartuMember.toLowerCase().equals("n")) {
+                continue;
+            }
+            
+            System.out.println("=================================================================");
+            System.out.println("");
+            
+            if(loop = true) {
+                
+                if(kartuMember.toLowerCase().equals("y")) {
+                    // Memiliki Kartu Disc 10%
+                    
+                    diskon = (int)(totalPembelian * 0.1);
+                    hargaAkhir = totalPembelian - diskon;
+                    kembalian = uangPembayaran - hargaAkhir;
+                    
+                    // Struk Memiliki Kartu
+                    System.out.println("=================================================================");
+                    System.out.println("Struk Pembayaran Angkringan Jawa");
+                    System.out.println("=================================================================");
+                    System.out.println("No.  Menu\t\tHarga\t\tPorsi\t\tBayar");
+                    System.out.println("=================================================================");
+            
+                    System.out.println("Makanan : ");
+                    for(int a = 0; a <= idxmkn; a++) {
+                        if(pesanan[a][0]!=null){
+                            System.out.print((a+1) + ".   " + pesanan[a][0] + "\tRp" +
+                                harga[a][0] + "\t\t" + porsi[a][0] + "\t\tRp" + bayar[a][0] + "\n");
+                        }
+                    }
+                    System.out.println("Minuman : ");
+                    for(int b = 0; b <= idxmnm; b++) {
+                        if(pesanan[b][1]!=null){
+                            System.out.print((b+1) + ".   " + pesanan[b][1] + "\tRp" +
+                                harga[b][1] + "\t\t" + porsi[b][1] + "\t\tRp" + bayar[b][1] + "\n");
+                        }
+                    }
+                    
+                    System.out.println("=================================================================");
+                    System.out.println("Total Pembelian\t\t: Rp" + totalPembelian);
+                    System.out.println("Diskon Kartu Member\t: Rp" + diskon);
+                    System.out.println("Harga Akhir\t\t: Rp" + hargaAkhir);
+                    System.out.println("Uang Pembayaran\t\t: Rp" + uangPembayaran);
+                    System.out.println("Kembalian\t\t: Rp" + kembalian);
+                    System.out.println("=================================================================");
+                
+                } else if(kartuMember.toLowerCase().equals("n")) {
+                    // Tidak Memiliki Kartu
+                    
+                    kembalian = uangPembayaran - totalPembelian;
+                    
+                    // Struk Tidak Memiliki Kartu
+                    System.out.println("=================================================================");
+                    System.out.println("Struk Pembayaran Angkringan Jawa");
+                    System.out.println("=================================================================");
+                    System.out.println("No.  Menu\t\tHarga\t\tPorsi\t\tBayar");
+                    System.out.println("=================================================================");
+                    
+                    System.out.println("Makanan : ");
+                    for(int a = 0; a <= idxmkn; a++) {
+                        if(pesanan[a][0]!=null){
+                            System.out.print((a+1) + ".   " + pesanan[a][0] + "\tRp" +
+                                harga[a][0] + "\t\t" + porsi[a][0] + "\t\tRp" + bayar[a][0] + "\n");
+                        }
+                    }
+                    System.out.println("Minuman : ");
+                    for(int b = 0; b <= idxmnm; b++) {
+                        if(pesanan[b][1]!=null){
+                            System.out.print((b+1) + ".   " + pesanan[b][1] + "\tRp" +
+                                harga[b][1] + "\t\t" + porsi[b][1] + "\t\tRp" + bayar[b][1] + "\n");
+                        }
+                    }
+                    
+                    System.out.println("=================================================================");
+                    System.out.println("Total Pembelian\t\t: Rp" + totalPembelian);
+                    System.out.println("Uang Pembayaran\t\t: Rp" + uangPembayaran);
+                    System.out.println("Kembalian\t\t: Rp" + kembalian);
+                    System.out.println("=================================================================");
+                    
+                }
+            
+            }
+             
+        }
+        
+        System.out.println("");
+        System.out.println("=================================================================");
+        System.out.println("Terima Kasih Telah Membeli!");
+        System.out.println("=================================================================");
+        System.out.println("");
+        
+    }
+    
+
+}
